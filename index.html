@@ -1,327 +1,512 @@
-<html lang="en">
+<html lang="id" class="scroll-smooth">
 <head>
   <meta charset="utf-8" />
-  <meta content="width=device-width, initial-scale=1" name="viewport" />
-  <title>Satria Hosting Links</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Profil Satria Hosting</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Great+Vibes&display=swap"
     rel="stylesheet"
   />
   <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
     rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
   />
   <style>
     body {
-      font-family: "Montserrat", sans-serif;
-      margin: 0;
-      background: linear-gradient(135deg, #6a4b9a 0%, #7e5ea8 100%);
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      min-height: 100vh;
-      padding: 0.5rem;
-      overflow-y: auto;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #1e3a8a, #6d28d9, #9333ea);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
     }
-    .container {
-      max-width: 280px;
-      width: 100%;
-      background: linear-gradient(180deg, #1a1a2e 0%, #1f1f3a 100%);
-      border-radius: 24px;
-      padding: 16px 16px 20px;
-      box-shadow: 0 0 40px #00fff7;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-top: 0.5rem;
-      margin-bottom: 0.5rem;
+
+    @keyframes gradientBG {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
     }
-    .logo-wrapper {
-      background: white;
+
+    /* Glow animation for icons */
+    .glow {
+      animation: glowAnim 2.5s ease-in-out infinite alternate;
+      filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.7));
+    }
+
+    @keyframes glowAnim {
+      0% {
+        filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.4));
+      }
+      100% {
+        filter: drop-shadow(0 0 12px rgba(255, 255, 255, 1));
+      }
+    }
+
+    /* Floating animation for profile image */
+    .float {
+      animation: floatAnim 4s ease-in-out infinite;
       border-radius: 9999px;
-      padding: 10px;
-      margin-bottom: 16px;
-      box-shadow: 0 0 30px #00fff7;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 56px;
-      height: 56px;
+      display: block;
+      position: relative;
+      z-index: 10;
     }
-    .logo-wrapper img {
-      width: 48px;
-      height: 48px;
-      border-radius: 8px;
-      object-fit: cover;
+
+    @keyframes floatAnim {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-8px);
+      }
     }
-    h1 {
-      font-weight: 800;
-      font-size: 1.25rem; /* 20px */
-      margin-bottom: 4px;
-      background: linear-gradient(
-        90deg,
-        #00fff7 0%,
-        #7e7ea8 50%,
-        #d97ed9 100%
-      );
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      text-fill-color: transparent;
-      text-align: center;
-      line-height: 1.3;
+
+    /* Button hover scale and shadow */
+    .btn-animated:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(255, 255, 255, 0.4);
     }
-    p.subtitle {
-      color: white;
-      font-size: 0.7rem; /* 11.2px */
-      margin-bottom: 16px;
-      letter-spacing: 0.05em;
-      text-align: center;
-      line-height: 1.3;
+
+    .btn-animated {
+      transition: all 0.3s ease;
     }
-    .underline-gradient {
-      width: 40px;
-      height: 2px;
-      border-radius: 9999px;
-      background: linear-gradient(90deg, #00fff7 0%, #7e5ea8 100%);
-      margin-bottom: 24px;
+
+    /* Elegant style for the main name with RGB animation */
+    .rgb-animated {
+      font-family: "Great Vibes", cursive;
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      user-select: none;
+      text-shadow:
+        0 0 5px #ff00c8,
+        0 0 10px #ff00c8,
+        0 0 20px #ff00c8,
+        0 0 30px #ff00c8;
+      animation: rgbShift 4s linear infinite, moveSideways 6s ease-in-out infinite alternate;
+      cursor: default;
     }
-    .link-list {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      max-height: 60vh;
-      overflow-y: auto;
-      padding-right: 6px;
+
+    @keyframes rgbShift {
+      0% {
+        text-shadow:
+          0 0 5px #ff0000,
+          0 0 10px #ff0000,
+          0 0 20px #ff0000,
+          0 0 30px #ff0000;
+        color: #ff0000;
+      }
+      25% {
+        text-shadow:
+          0 0 5px #00ffea,
+          0 0 10px #00ffea,
+          0 0 20px #00ffea,
+          0 0 30px #00ffea;
+        color: #00ffea;
+      }
+      50% {
+        text-shadow:
+          0 0 5px #00ff00,
+          0 0 10px #00ff00,
+          0 0 20px #00ff00,
+          0 0 30px #00ff00;
+        color: #00ff00;
+      }
+      75% {
+        text-shadow:
+          0 0 5px #ff00ff,
+          0 0 10px #ff00ff,
+          0 0 20px #ff00ff,
+          0 0 30px #ff00ff;
+        color: #ff00ff;
+      }
+      100% {
+        text-shadow:
+          0 0 5px #ff0000,
+          0 0 10px #ff0000,
+          0 0 20px #ff0000,
+          0 0 30px #ff0000;
+        color: #ff0000;
+      }
     }
-    .link-list::-webkit-scrollbar {
-      width: 6px;
+
+    @keyframes moveSideways {
+      0% {
+        transform: translateX(0);
+      }
+      50% {
+        transform: translateX(8px);
+      }
+      100% {
+        transform: translateX(0);
+      }
     }
-    .link-list::-webkit-scrollbar-thumb {
-      background-color: #00fff7;
-      border-radius: 3px;
+
+    /* Wing SVG container */
+    .wing-wrapper {
+      position: relative;
+      width: 80px;
+      height: 80px;
+      margin-bottom: 0.75rem;
     }
-    .link-item {
-      background: linear-gradient(135deg, #0f1a2a 0%, #1a2a3a 100%);
-      border-radius: 24px;
-      padding: 8px 14px;
-      box-shadow: inset 5px 5px 10px rgba(0, 255, 247, 0.3),
-        inset -5px -5px 10px rgba(0, 255, 247, 0.1);
+
+    /* Wings container */
+    .wings {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 180px;
+      height: 90px;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      user-select: none;
+      z-index: 5;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      cursor: pointer;
-      transition: box-shadow 0.3s ease;
-      text-decoration: none;
-      font-size: 0.65rem;
-      line-height: 1.1rem;
-      user-select: none;
+      animation: wingsFlap 3s ease-in-out infinite;
     }
-    .link-item:hover {
-      box-shadow: inset 5px 5px 15px rgba(0, 255, 247, 0.5),
-        inset -5px -5px 15px rgba(0, 255, 247, 0.3);
+
+    /* Individual wing style */
+    .wing {
+      width: 80px;
+      height: 90px;
+      fill: url(#wingGradient);
+      filter: drop-shadow(0 0 8px #a855f7);
+      transform-origin: center bottom;
+      will-change: transform;
     }
-    .link-left {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: #00fff7;
-      font-weight: 600;
-      text-transform: uppercase;
-      max-width: 130px;
-      white-space: normal;
-      word-break: break-word;
+
+    .wing.left {
+      transform-origin: right bottom;
+      animation: wingFlapLeft 3s ease-in-out infinite;
     }
-    .link-left i {
-      font-size: 1rem; /* 16px */
-      flex-shrink: 0;
+
+    .wing.right {
+      transform-origin: left bottom;
+      animation: wingFlapRight 3s ease-in-out infinite;
     }
-    .link-right i {
-      color: #00fff7;
-      font-size: 1rem; /* 16px */
-    }
-    .socials {
-      margin-top: 28px;
-      margin-bottom: 12px;
-      display: flex;
-      gap: 14px;
-    }
-    .social-link {
-      width: 34px;
-      height: 34px;
-      border-radius: 9999px;
-      border: 1.5px solid #00fff7;
-      color: #00fff7;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: background-color 0.3s ease, color 0.3s ease;
-      text-decoration: none;
-      font-size: 1rem;
-    }
-    .social-link:hover {
-      background-color: #00fff7;
-      color: #1a1a2e;
-    }
-    .footer-text {
-      color: #a3a3a3;
-      font-size: 0.6rem;
-      text-align: center;
-      user-select: none;
-      line-height: 1.1rem;
-      padding-top: 4px;
-    }
-    @media (max-width: 400px) {
-      .container {
-        max-width: 100%;
+
+    @keyframes wingsFlap {
+      0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
       }
-      .link-left {
-        max-width: 110px;
-        font-size: 0.6rem;
+      50% {
+        transform: translate(-50%, -50%) scale(1.05);
+      }
+    }
+
+    @keyframes wingFlapLeft {
+      0%, 100% {
+        transform: rotate(15deg);
+      }
+      50% {
+        transform: rotate(5deg);
+      }
+    }
+
+    @keyframes wingFlapRight {
+      0%, 100% {
+        transform: rotate(-15deg);
+      }
+      50% {
+        transform: rotate(-5deg);
       }
     }
   </style>
 </head>
 <body>
-  <div class="container" role="main" aria-label="Vann Hosting links container">
-    <div class="logo-wrapper">
-      <img
-        src="https://files.catbox.moe/gtj0z8.jpg"
-        alt="Satria Hosting logo, small square with blue and white colors"
-        width="48"
-        height="48"
-      />
-    </div>
-    <h1>SATRIA HOSTING</h1>
-    <p class="subtitle">All Link Gc Satria Hosting</p>
-    <div class="underline-gradient" aria-hidden="true"></div>
-    <nav class="link-list" aria-label="Vann Hosting links" tabindex="0">
-      <a href="https://wa.me/6285366010255" target="_blank" rel="noopener" class="link-item" tabindex="-1">
-        <div class="link-left">
-          <i class="fab fa-whatsapp" aria-hidden="true"></i>
-          SATRIA HOSTING
+  <div class="max-w-2xl mx-auto p-4">
+    <!-- Profile Section -->
+    <section class="flex flex-col items-center space-y-3 mt-8 relative">
+      <div class="wing-wrapper">
+        <div class="wings" aria-hidden="true">
+          <svg
+            class="wing left"
+            viewBox="0 0 120 140"
+            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="xMidYMid meet"
+          >
+            <defs>
+              <linearGradient id="wingGradient" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#7e22ce" />
+                <stop offset="100%" stop-color="#a855f7" />
+              </linearGradient>
+            </defs>
+            <path
+              d="M10 130 Q40 10 110 130 Q80 100 10 130 Z"
+              fill="url(#wingGradient)"
+              stroke="#a855f7"
+              stroke-width="2"
+            />
+            <path
+              d="M30 120 Q50 40 90 120"
+              stroke="#d8b4fe"
+              stroke-width="3"
+              fill="none"
+              stroke-linecap="round"
+            />
+            <path
+              d="M40 110 Q60 60 80 110"
+              stroke="#c084fc"
+              stroke-width="2"
+              fill="none"
+              stroke-linecap="round"
+            />
+          </svg>
+          <svg
+            class="wing right"
+            viewBox="0 0 120 140"
+            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="xMidYMid meet"
+          >
+            <defs>
+              <linearGradient id="wingGradient" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#7e22ce" />
+                <stop offset="100%" stop-color="#a855f7" />
+              </linearGradient>
+            </defs>
+            <path
+              d="M110 130 Q80 10 10 130 Q40 100 110 130 Z"
+              fill="url(#wingGradient)"
+              stroke="#a855f7"
+              stroke-width="2"
+            />
+            <path
+              d="M90 120 Q70 40 30 120"
+              stroke="#d8b4fe"
+              stroke-width="3"
+              fill="none"
+              stroke-linecap="round"
+            />
+            <path
+              d="M80 110 Q60 60 40 110"
+              stroke="#c084fc"
+              stroke-width="2"
+              fill="none"
+              stroke-linecap="round"
+            />
+          </svg>
         </div>
-        <div class="link-right">
-          <i class="fas fa-arrow-right" aria-hidden="true"></i>
-        </div>
-      </a>
-      <a href="https://chat.whatsapp.com/GlBtDeRDaPiLyQkpONkqd9?mode=ac_t" target="_blank" rel="noopener" class="link-item" tabindex="-1">
-        <div class="link-left">
-          <i class="fas fa-users" aria-hidden="true"></i>
-          LADANG JASTEB SATRIA HOSTING
-        </div>
-        <div class="link-right">
-          <i class="fas fa-arrow-right" aria-hidden="true"></i>
-        </div>
-      </a>
-      <a href="https://chat.whatsapp.com/Kd99QFCj6hSEAF9RcA08Dl?mode=ac_t" target="_blank" rel="noopener" class="link-item" tabindex="-1">
-        <div class="link-left">
-          <i class="fas fa-robot" aria-hidden="true"></i>
-          PORTAL CREATE WEBP BOT WA
-        </div>
-        <div class="link-right">
-          <i class="fas fa-arrow-right" aria-hidden="true"></i>
-        </div>
-      </a>
-      <a href="https://example.com/bahan-nebar-webp" target="_blank" rel="noopener" class="link-item" tabindex="-1">
-        <div class="link-left">
-          <i class="fas fa-share-alt" aria-hidden="true"></i>
-          BAHAN NEBAR WEBP
-        </div>
-        <div class="link-right">
-          <i class="fas fa-arrow-right" aria-hidden="true"></i>
-        </div>
-      </a>
-      <a href="https://whatsapp.com/channel/0029VbAf7If9Gv7WQlB12g1v" target="_blank" rel="noopener" class="link-item" tabindex="-1">
-        <div class="link-left">
-          <i class="fas fa-info-circle" aria-hidden="true"></i>
-          BUY WHM - MWHM - subdom
-        </div>
-        <div class="link-right">
-          <i class="fas fa-arrow-right" aria-hidden="true"></i>
-        </div>
-      </a>
-      <a href="https://example.com/testimoni-vann-webp" target="_blank" rel="noopener" class="link-item" tabindex="-1">
-        <div class="link-left">
-          <i class="fas fa-star" aria-hidden="true"></i>
-          TESTIMONI SATRIA WEBP
-        </div>
-        <div class="link-right">
-          <i class="fas fa-arrow-right" aria-hidden="true"></i>
-        </div>
-      </a>
-      <a href="https://whatsapp.com/channel/0029Vb5m8AJ7z4kZNFexDe3l" target="_blank" rel="noopener" class="link-item" tabindex="-1">
-        <div class="link-left">
-          <i class="fas fa-info-circle" aria-hidden="true"></i>
-          ALL INFO SATRIA HOSTING
-        </div>
-        <div class="link-right">
-          <i class="fas fa-arrow-right" aria-hidden="true"></i>
-        </div>
-      </a>
-      <a href="https://whatsapp.com/channel/0029VbAO8WLK5cDKXvOBtb2p" target="_blank" rel="noopener" class="link-item" tabindex="-1">
-        <div class="link-left">
-          <i class="fas fa-star" aria-hidden="true"></i>
-          TESTIMONI SATRIA HOSTING
-        </div>
-        <div class="link-right">
-          <i class="fas fa-arrow-right" aria-hidden="true"></i>
-        </div>
-      </a>
-    </nav>
-    <div class="socials" role="list" aria-label="Social media links">
-      <a
-        href="https://youtube.com"
-        class="social-link"
-        role="listitem"
-        aria-label="YouTube"
-        target="_blank"
-        rel="noopener"
-        tabindex="0"
+        <img
+          alt="Foto profil Satria Hosting, seorang pria muda dengan latar belakang teknologi dan server"
+          class="float rounded-full border-4 border-white shadow-lg w-20 h-20 object-cover relative z-10"
+          height="80"
+          src="https://files.catbox.moe/z831iq.gif"
+          width="80"
+        />
+      </div>
+      <h1 class="rgb-animated select-none">Satria Hosting</h1>
+      <p class="text-base text-gray-200 drop-shadow-md"></p>
+    </section>
+
+    <!-- WhatsApp Admin Section -->
+    <section
+      class="mt-8 bg-white bg-opacity-10 rounded-xl p-4 shadow-lg backdrop-blur-md"
+    >
+      <h2
+        class="text-lg font-semibold mb-3 flex items-center space-x-2 text-white glow"
       >
-        <i class="fab fa-youtube" aria-hidden="true"></i>
-      </a>
-      <a
-        href="https://instagram.com"
-        class="social-link"
-        role="listitem"
-        aria-label="Instagram"
-        target="_blank"
-        rel="noopener"
-        tabindex="0"
+        <i class="fab fa-whatsapp text-green-400 text-2xl"></i>
+        <span>WhatsApp Admin</span>
+      </h2>
+      <div class="flex flex-col space-y-2">
+        <a
+          href="https://wa.me/6285366010255"
+          target="_blank"
+          class="flex items-center space-x-2 bg-green-600 hover:bg-green-700 transition rounded-lg px-4 py-2 shadow-md btn-animated text-sm"
+        >
+          <i class="fas fa-user-circle text-xl"></i>
+          <span class="text-white font-medium">ᴀᴅᴍɪɴ ꜱᴀᴛʀɪᴀ ʜᴏꜱᴛɪɴɢ </span>
+        </a>
+      </div>
+    </section>
+
+    <!-- All Grup WA Section -->
+    <section
+      class="mt-8 bg-white bg-opacity-10 rounded-xl p-4 shadow-lg backdrop-blur-md"
+    >
+      <h2
+        class="text-lg font-semibold mb-3 flex items-center space-x-2 text-white glow"
       >
-        <i class="fab fa-instagram" aria-hidden="true"></i>
-      </a>
-      <a
-        href="https://telegram.org"
-        class="social-link"
-        role="listitem"
-        aria-label="Telegram"
-        target="_blank"
-        rel="noopener"
-        tabindex="0"
+        <i class="fas fa-users text-yellow-400 text-2xl"></i>
+        <span>𝙰𝙻𝙻 𝙶𝚁𝚄𝙿 𝚂𝙰𝚃𝚁𝙸𝙰 </span>
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-white text-xs">
+        <a
+          href="https://chat.whatsapp.com/examplegroup1"
+          target="_blank"
+          class="flex items-center space-x-2 bg-yellow-600 hover:bg-yellow-700 transition rounded-lg px-3 py-2 shadow-md btn-animated"
+        >
+          <i class="fab fa-whatsapp text-lg"></i>
+          <span>𝙻𝙰𝙳𝙰𝙽𝙶 𝙹𝙰𝚂𝚃𝙴𝙱 𝚂𝙰𝚃𝚁𝙸𝙰¹</span>
+        </a>
+        <a
+          href="https://chat.whatsapp.com/examplegroup2"
+          target="_blank"
+          class="flex items-center space-x-2 bg-yellow-600 hover:bg-yellow-700 transition rounded-lg px-3 py-2 shadow-md btn-animated"
+        >
+          <i class="fab fa-whatsapp text-lg"></i>
+          <span>𝙻𝙰𝙳𝙰𝙽𝙶 𝙹𝙰𝚂𝚃𝙴𝙱 𝚂𝙰𝚃𝚁𝙸𝙰²</span>
+        </a>
+        <a
+          href="https://chat.whatsapp.com/examplegroup3"
+          target="_blank"
+          class="flex items-center space-x-2 bg-yellow-600 hover:bg-yellow-700 transition rounded-lg px-3 py-2 shadow-md btn-animated"
+        >
+          <i class="fab fa-whatsapp text-lg"></i>
+          <span>𝙿𝙾𝚁𝚃𝙰𝙻 𝙲𝚁𝙴𝙰𝚃𝙴 𝚆𝙴𝙱𝙿 𝚂𝙰𝚃𝚁𝙸𝙰</span>
+        </a>
+        <a
+          href="https://chat.whatsapp.com/examplegroup4"
+          target="_blank"
+          class="flex items-center space-x-2 bg-yellow-600 hover:bg-yellow-700 transition rounded-lg px-3 py-2 shadow-md btn-animated"
+        >
+          <i class="fab fa-whatsapp text-lg"></i>
+          <span>𝚃𝙴𝙰𝙼 𝚁𝙴𝚂𝚂 𝙿𝚁𝙸𝚅𝙰𝚃𝙴 𝚂𝙰𝚃𝚁𝙸𝙰 𝙷𝙾𝚂𝚃𝙸𝙽𝙶</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Saluran WA Section -->
+    <section
+      class="mt-8 bg-white bg-opacity-10 rounded-xl p-4 shadow-lg backdrop-blur-md"
+    >
+      <h2
+        class="text-lg font-semibold mb-3 flex items-center space-x-2 text-white glow"
       >
-        <i class="fab fa-telegram-plane" aria-hidden="true"></i>
-      </a>
-      <a
-        href="https://tiktok.com"
-        class="social-link"
-        role="listitem"
-        aria-label="TikTok"
-        target="_blank"
-        rel="noopener"
-        tabindex="0"
+        <i class="fas fa-broadcast-tower text-blue-400 text-2xl"></i>
+        <span>𝙰𝙻𝙻 𝙸𝙽𝙵𝙾 𝚂𝙰𝙻𝚄𝚁𝙰𝙽 </span>
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-white text-xs">
+        <a
+          href="https://whatsapp.com/channel/0029VbAO8WLK5cDKXvOBtb2p"
+          target="_blank"
+          class="flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 transition rounded-lg px-3 py-2 shadow-md btn-animated"
+        >
+          <i class="fas fa-rss text-lg"></i>
+          <span>𝚃𝙴𝚂𝚃𝙸𝙼𝙾𝙽𝙸 𝚂𝙰𝚃𝚁𝙸𝙰 𝙷𝙾𝚂𝚃𝙸𝙽𝙶</span>
+        </a>
+        <a
+          href="https://whatsapp.com/channel/0029Vb5m8AJ7z4kZNFexDe3l"
+          target="_blank"
+          class="flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 transition rounded-lg px-3 py-2 shadow-md btn-animated"
+        >
+          <i class="fas fa-rss text-lg"></i>
+          <span>𝙰𝙻𝙻 𝙸𝙽𝙵𝙾 𝚂𝙰𝚃𝚁𝙸𝙰 𝙷𝙾𝚂𝚃𝙸𝙽𝙶</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- All Info Saluran WA Section -->
+    <section
+      class="mt-8 bg-white bg-opacity-10 rounded-xl p-4 shadow-lg backdrop-blur-md"
+    >
+      <h2
+        class="text-lg font-semibold mb-3 flex items-center space-x-2 text-white glow"
       >
-        <i class="fab fa-tiktok" aria-hidden="true"></i>
-      </a>
-    </div>
-    <p class="footer-text">© 2025 Satria Hosting| All Rights Reserved</p>
+        <i class="fas fa-info-circle text-indigo-400 text-2xl"></i>
+        <span>𝙰𝙻𝙻 𝙸𝙽𝙵𝙾 𝚂𝙰𝙻𝚄𝚁𝙰𝙽 𝚂𝙰𝚃𝚁𝙸𝙰 </span>
+      </h2>
+      <ul class="list-disc list-inside space-y-1 text-gray-200 text-xs">
+        <li>Info terbaru hosting dan domain</li>
+        <li>Promo dan diskon khusus anggota</li>
+        <li>Tips dan tutorial penggunaan layanan</li>
+        <li>Pengumuman maintenance dan update</li>
+        <li>Support dan bantuan teknis</li>
+      </ul>
+    </section>
+
+    <!-- All Grup Satria Section -->
+    <section
+      class="mt-8 bg-white bg-opacity-10 rounded-xl p-4 shadow-lg backdrop-blur-md"
+    >
+      <h2
+        class="text-lg font-semibold mb-3 flex items-center space-x-2 text-white glow"
+      >
+        <i class="fas fa-layer-group text-pink-400 text-2xl"></i>
+        <span>𝙰𝙻𝙻 𝙺𝙴𝙱𝚄𝚃𝚄𝙷𝙰𝙽 𝙷𝙾𝚂𝚃𝙸𝙽𝙶</span>
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-white text-xs">
+        <a
+          href="https://chat.whatsapp.com/satriagroup1"
+          target="_blank"
+          class="flex items-center space-x-2 bg-pink-600 hover:bg-pink-700 transition rounded-lg px-3 py-2 shadow-md btn-animated"
+        >
+          <i class="fas fa-users text-lg"></i>
+          <span>𝙼𝚄𝚁𝙸𝙳 𝚃𝙴𝙰𝙼 𝚁𝙴𝚂𝚂 𝟷𝟻𝙺</span>
+        </a>
+        <a
+          href="https://chat.whatsapp.com/satriagroup2"
+          target="_blank"
+          class="flex items-center space-x-2 bg-pink-600 hover:bg-pink-700 transition rounded-lg px-3 py-2 shadow-md btn-animated"
+        >
+          <i class="fas fa-users text-lg"></i>
+          <span>𝙼𝚄𝚁𝙸𝙳 𝙽𝙴𝙱𝙰𝚁 𝚆𝙴𝙱𝙿 𝟸𝟻𝙺</span>
+        </a>
+        <a
+          href="https://chat.whatsapp.com/satriagroup3"
+          target="_blank"
+          class="flex items-center space-x-2 bg-pink-600 hover:bg-pink-700 transition rounded-lg px-3 py-2 shadow-md btn-animated"
+        >
+          <i class="fas fa-users text-lg"></i>
+          <span>𝙼𝚄𝚁𝙸𝙳 𝙼𝙰𝚁𝙶𝙰 𝚂𝙰𝚃𝚁𝙸𝙰 𝟻𝟶𝙺</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Social Media Section -->
+    <section
+      class="mt-8 bg-white bg-opacity-10 rounded-xl p-4 shadow-lg backdrop-blur-md text-center"
+    >
+      <h2
+        class="text-lg font-semibold mb-4 flex justify-center items-center space-x-3 text-white glow"
+      >
+        <i class="fas fa-share-alt text-red-400 text-2xl"></i>
+        <span>𝙼𝙴𝙳𝙸𝙰 𝚂𝙾𝚂𝙸𝙰𝙻 𝙰𝙳𝙼𝙸𝙽 </span>
+      </h2>
+      <div class="flex justify-center space-x-6 text-white text-2xl">
+        <a
+          aria-label="YouTube Satria Hosting"
+          href="https://www.youtube.com/channel/UCexample"
+          target="_blank"
+          class="hover:text-red-600 transition btn-animated"
+        >
+          <i class="fab fa-youtube"></i>
+        </a>
+        <a
+          aria-label="TikTok Satria Hosting"
+          href="https://www.tiktok.com/@satriahosting"
+          target="_blank"
+          class="hover:text-pink-500 transition btn-animated"
+        >
+          <i class="fab fa-tiktok"></i>
+        </a>
+        <a
+          aria-label="Instagram Satria Hosting"
+          href="https://www.instagram.com/satriahosting"
+          target="_blank"
+          class="hover:text-pink-600 transition btn-animated"
+        >
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </section>
   </div>
-  <script>
-    // Optional: Add click feedback or analytics here if needed
-    // All links are actual <a> tags with href and open in new tabs
-  </script>
+
+  <!-- SVG defs for wing gradient -->
+  <svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute;overflow:hidden;visibility:hidden;pointer-events:none;">
+    <defs>
+      <linearGradient id="wingGradient" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#7e22ce" />
+        <stop offset="100%" stop-color="#a855f7" />
+      </linearGradient>
+    </defs>
+  </svg>
 </body>
-</html>
+  </html>
